@@ -60,4 +60,9 @@ describe('Find or Get elements by using different locators', () => {
           */
     })
 
+    it('Check finding elements by travelling through DOM_Document Object Model',()=>{
+        // Travel to find the login button ==> Locate username field, go to parent form, then find Login button.
+        cy.get('input[name="username"').parent('form').find('button').should('contain','Login').click();
+    })
+
 })

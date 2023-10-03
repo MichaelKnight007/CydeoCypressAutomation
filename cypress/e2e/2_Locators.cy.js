@@ -12,12 +12,12 @@ describe('Find or Get elements by using different locators', () => {
 
         // Locator Strategies
 
-        // 1_ By using CSS locator, cypress needs additional dependency to use Xpath
+        // 1_ By using CSS locator, cypress needs additional extention to use Xpath
 
         cy.get("input[name='username']").type("CydeoStudent");
         /**  every statement creates an object to be interacted, and next command makes operation on the object
          * that has been created at the previous statement.
-         */ 
+         */
 
 
         // 2_ By attribute and value
@@ -25,7 +25,7 @@ describe('Find or Get elements by using different locators', () => {
         // it again using attribute and value.
 
 
-        // 3_ How to locate multiple elements
+        // 3_ How to locate multiple elements using tag name
         //We have 2 elements having input as a tag name. to handle it, we can use each function. 
         // It has 3 parameters, item, index, and the list. We can change the names in function.
         /** 
@@ -36,7 +36,28 @@ describe('Find or Get elements by using different locators', () => {
             expect(item).to.have.attr("type");
 
         })
+
+        
 */
+
+        // 4. By attribute name
+        cy.get('[type]');
+
+        // 5. By className ==> We can overcome space problem that we have in Selenium. 
+           /**We use "." instead of space. And we get only the value of className attribute,
+           and we start with ".".
+           */
+        cy.get('.btn.btn-primary');
+
+        // 6. By id ==> We start with #.
+        cy.get('#wooden_spoon');
+
+        // 7. By Text ==> There is no xpath in cypress, but we can use text to locate with a different approach.
+        cy.get('button').should('contain','Login').click();
+         /**
+          * There may be more than one tag name button. We say it should have the text "Login". So we use 
+          * text of it to locate.
+          */
     })
 
 })

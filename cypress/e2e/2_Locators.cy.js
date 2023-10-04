@@ -60,9 +60,30 @@ describe('Find or Get elements by using different locators', () => {
           */
     })
 
-    it.only('Check finding elements by travelling through DOM_Document Object Model',()=>{
+    it('Check finding elements by travelling through DOM_Document Object Model',()=>{
         // Travel to find the login button ==> Locate username field, go to parent form, then find Login button.
         cy.get('input[name="username"]').parents('form').find('button').should('contain','Login').click();
+    })
+
+    it.only('Check different types of assertions',()=>{
+        // Cypress itself bundles assertions using Chai, Sinon, and JQuery Libraries.
+
+
+        // 1_SHOULD ASSERTION ==> does the assertion directly on the object itself
+        cy.get('#wooden_spoon')
+        .should('contain','Login')
+        .and('have.class','btn btn-primary');
+
+        // 2_EXPECT ASSERTION ==> Explicitly asserts. It creates a subject of our test,
+        // then we implement different actions on it. It is used to be able to create different actions in it.
+        // .then() is another function. We create a function and then create our assertions.
+        cy.get('#wooden_spoon').then((buttonElement)=>{
+
+            expect(buttonElement).to.have.text('Login');
+            expect(buttonElement).to.have.class('btn btn-primary');
+
+        })
+
     })
 
 })

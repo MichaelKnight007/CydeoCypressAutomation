@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "cypress-cli": "cypress open",
-    "cypress-headed":"cypress run -b chrome",
-    "cypress-headless":"cypress run --headless -b chrome",
-    "eslint":"eslint cypress",
-    "eslint-fix":"eslint cypress --fix"
+    "cypress-headed": "cypress run -b chrome",
+    "cypress-headless": "cypress run --headless -b chrome",
+    "eslint": "eslint cypress",
+    "eslint-fix": "eslint cypress --fix"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.3.0"
+    "cypress": "^13.3.0",
+    "cypress-file-upload": "^5.0.8"
   },
   "devDependencies": {
     "eslint": "^8.50.0",

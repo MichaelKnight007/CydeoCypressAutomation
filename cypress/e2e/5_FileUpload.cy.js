@@ -19,7 +19,7 @@ describe('Cypress File Upload Tests',()=>{
          *  
          */
 
-        cy.clearCookies;
+        cy.clearCookies();
         cy.visit('/upload');
 
     })

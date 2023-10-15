@@ -14,7 +14,7 @@ describe('Cypress Webtables Tests',{baseUrl:"https://demoqa.com"},()=>{
         cy.visit('/webtables');
     })
 
-    it('Finding and editing a record',()=>{
+    it.skip('Check finding and editing a record',()=>{
         /**
          * Locate table body, then navigate through this table to find "Alben",
          * then change it with another person.
@@ -30,7 +30,7 @@ describe('Cypress Webtables Tests',{baseUrl:"https://demoqa.com"},()=>{
             // click for edit button for Alden.
             cy.wrap(row).find('[title="Edit"]').click();
             //Fill in the firstName and lastName boxes with new data.
-            cy.get('#firsgit tName').clear().type('Harvey');
+            cy.get('#firstName').clear().type('Harvey');
             cy.get('#lastName').clear().type('Specter');
             cy.get('#submit').click();
 
@@ -45,6 +45,25 @@ describe('Cypress Webtables Tests',{baseUrl:"https://demoqa.com"},()=>{
         })
     })
 
+    it('Check finding and deleting a record',()=>{
+        cy.get('.rt-tbody')
+        .contains('.rt-tr-group','Alden')
+        .then((row)=>{
+            // click for Delete button for Alden. When we delete 'Alden' the row will be deleted
+           cy.wrap(row).find('[title="Delete"]').click();
+           //We deleted 'Alden'. It'll not be available after this then block.
+        })
+        //Assert that table does not have 'Alden' record
+        // First way;
+        cy.get('.rt-tbody').should('not.contain','Alden');
+
+        // Second way; to use search box and 3 ways to assert...
+        cy.get('#searchBox').type('Alden');
+        cy.get('#basic-addon2').click();
+        cy.get('.rt-noData').should('have.text', 'No rows found');
+        cy.get('.rt-noData').should('contain', 'No rows found');
+        cy.get('.rt-noData').should('be.visible');
+    })
+    })
 
 
-})

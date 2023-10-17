@@ -30,7 +30,7 @@ it('Opening a web application', ()=>{
 
 
 */
-  it.skip('Opening a web application', () => {
+  it('Opening a web application', () => {
     cy.visit('/registration_form');
   });
 

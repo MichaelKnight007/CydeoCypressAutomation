@@ -1,0 +1,32 @@
+{
+
+    "user1":{
+        "firstName":"Harvey",
+        "lastName":"Spector",
+        "age":"40",
+        "userEmail":"specter@example.com",
+        "salary":"70000",
+        "department":"legal"
+
+    },
+
+    "user3":{
+        "firstName":"Michael",
+        "lastName":"Knight",
+        "userEmail":"knight@example.com",
+        "age":"50",
+        "salary":"100000",
+        "department":"IT"
+
+    },
+
+    "user2":{
+        	        "usernamer":"tomsmith",
+        	        "password":"SuperSecretPassword"
+        	}
+        
+    
+
+
+
+}

@@ -64,7 +64,7 @@ describe('Find or Get elements by using different locators', () => {
       .click();
   });
 
-  it.only('Check different types of assertions', () => {
+  it('Check different types of assertions', () => {
     // Cypress itself bundles assertions using Chai, Sinon, and JQuery Libraries.
 
     // 1_SHOULD ASSERTION ==> does the assertion directly on the object itself

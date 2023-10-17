@@ -36,13 +36,5 @@ it('Check upload action',()=>{
         cy.contains('feel-that-thats-friday-friday.mp4').should('be.visible');
     })
 
-
-
-
-
-})
-
-
-
-
+    })
 })

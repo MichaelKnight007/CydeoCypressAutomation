@@ -25,3 +25,16 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-file-upload';
+
+// Getting the text of a webElement
+/**
+ * textExists is the command name; when we are calling it from another test class;
+ * cy.textExists('parameter');
+ * kind of like utility methods we used before, it overrides existing command. 
+ */
+
+Cypress.Commands.add('textExists', (text) =>{
+	
+	cy.contains(text).should('exist');
+});
+

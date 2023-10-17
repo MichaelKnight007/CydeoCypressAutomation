@@ -66,7 +66,7 @@ describe('Input Forms Tests', () => {
     });
 
 
-    it.only(('Check Different Checkbox Actions'),()=>{
+    it(('Check Different Checkbox Actions'),()=>{
         // get all the checkboxes and select JAVA and verify
 
         cy.get('[type="checkbox"]').then((checkbox)=>{
@@ -92,7 +92,7 @@ describe('Input Forms Tests', () => {
 
     })
 
-    it.only('Check selection of all select dropdown options',()=>{
+    it('Check selection of all select dropdown options',()=>{
         // We'll provide data through fixtures folder as JSON object, than use that data to verfy select values
         cy.fixture('departments').then((departments)=>{
             //Get all options in the menu, iterate through these options one by one

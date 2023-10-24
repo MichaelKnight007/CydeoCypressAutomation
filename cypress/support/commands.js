@@ -30,11 +30,9 @@ import 'cypress-file-upload';
 /**
  * textExists is the command name; when we are calling it from another test class;
  * cy.textExists('parameter');
- * kind of like utility methods we used before, it overrides existing command. 
+ * kind of like utility methods we used before, it overrides existing command.
  */
 
-Cypress.Commands.add('textExists', (text) =>{
-	
-	cy.contains(text).should('exist');
+Cypress.Commands.add('textExists', (text) => {
+  cy.contains(text).should('exist');
 });
-
